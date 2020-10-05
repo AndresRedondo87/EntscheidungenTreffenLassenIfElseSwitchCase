@@ -22,7 +22,9 @@ namespace EntscheidungenTreffenLassenIfElseSwitchCase
             int temperature;
             int number;
 
-            bool userEnteredANumber = int.TryParse(temperatureInput, out number);
+
+
+            bool userEnteredANumber = int.TryParse(temperatureInput, out number);       //TRYPARSE!!!
 
             if (userEnteredANumber)
             {
@@ -52,6 +54,27 @@ namespace EntscheidungenTreffenLassenIfElseSwitchCase
             }
 
 
+            //-------------------------------------------------------------------------------Versachtelte If Statements
+            Console.WriteLine("Versachtelte If Statements");
+
+            bool isAdmin = true;
+            bool isRegistered = true;
+            string userName = "";
+            Console.WriteLine("Bitte trage deinen Benutzernamen ein!");
+            userName = Console.ReadLine();
+
+            if (isRegistered && userName != "" && userName == "Admin")
+            {
+                Console.WriteLine("Hallo registrierter Nutzer!");
+                Console.WriteLine("Hi {0}", userName);
+                Console.WriteLine("Hallo Admin!");
+
+            }
+
+            if (isAdmin || isRegistered)
+            {
+                Console.WriteLine("Du bist eingeloggt");
+            }
 
             Console.WriteLine("ENDE");
             Console.ReadKey();
