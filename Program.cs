@@ -110,9 +110,13 @@ namespace EntscheidungenTreffenLassenIfElseSwitchCase
 
 
             //Herausforderung If Statements 2
+
             InputPlayerAndHighScore();
-            InputnewScore();
-            checkNewHighScore(newplayerName, newScore);
+            do
+            {
+                InputnewScore();
+                checkNewHighScore(newplayerName, newScore);
+            } while (!string.IsNullOrEmpty(newplayerName));
 
             //Herausforderung If Statements 2 Ende
 
@@ -131,9 +135,9 @@ namespace EntscheidungenTreffenLassenIfElseSwitchCase
         }
         public static void InputnewScore()
         {
-            Console.WriteLine("Bitte trage deinen newPlayerName ein:");
+            Console.WriteLine("Bitte trage deinen NEW PlayerName ein(LEER zum beenden):");
             newplayerName = Console.ReadLine(); 
-            Console.WriteLine("Bitte trage dein new Score ein!");
+            Console.WriteLine("Bitte trage dein NEW Score ein!(mindestens 0)");
             newScore = int.Parse(Console.ReadLine());
         }
 
@@ -153,6 +157,41 @@ namespace EntscheidungenTreffenLassenIfElseSwitchCase
             }
         }
         //-------------Herausforderung If Statements 2 ENDE
+
+        /////// <summary> Herausforderung If Statements 2  Lehrer Lösung
+        /////// // höchste Punktzahl
+        ////static int highscore = 300;
+        ////// Rekordhalter
+        ////static string highscorePlayer = "Denis";
+
+        ////static void Main(string[] args)
+        ////{
+        ////    CheckHighscore(255, "Frank");
+        ////    CheckHighscore(325, "Michaela");
+        ////    CheckHighscore(270, "Guido");
+        ////    Console.ReadKey();
+        ////}
+
+        ////public static void CheckHighscore(int score, string playerName)
+        ////{
+        ////    if (score > highscore)
+        ////    {
+        ////        highscore = score;
+        ////        highscorePlayer = playerName;
+
+        ////        Console.WriteLine("Neuer Highscore ist {0}", score);
+        ////        Console.WriteLine("Neuer Rekordhalter ist {0}", playerName);
+        ////    }
+        ////    else
+        ////    {
+        ////        Console.WriteLine("Der alte Highsore konnte nicht gebrochen werden. Er ist immer noch " +
+        ////            "{0} und wird von {1} gehalten", highscore, highscorePlayer);
+        ////    }
+        ////}
+        /////// 
+        /// </summary>
+
+
 
         public static void Register()
         {
