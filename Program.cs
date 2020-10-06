@@ -120,6 +120,54 @@ namespace EntscheidungenTreffenLassenIfElseSwitchCase
 
             //Herausforderung If Statements 2 Ende
 
+
+
+
+            //------------------------------------------Erweiterte If Statements
+            // Bedingung ? erster_Ausdruck : zweiter_Ausdruck;
+            // Bedingung muss entweder wahr oder falsch sein (true /false)
+            // Der konditionelle Operator ist rechtdassociativ
+            // Der Audruck a ? b : c ? d: e
+            // wird so evaluiert a ? b : (c ? d : e),
+            // und nicht als (a ? b : c) ? d : e.
+            // Der Kontionelle operator kann nicht überschrieben werden.
+
+
+            // Temperatur unseres Wassers
+            int temperature = -5;
+            // Aggregatszustand
+            string stateOfMatter;
+
+            if (temperature < 0)
+            {
+                stateOfMatter = "fest";
+            }
+            else if (temperature < 100)
+            {
+                stateOfMatter = "flüssig";
+            }
+            else
+            {
+                stateOfMatter = "gas";
+            }
+
+            Console.WriteLine("Aggregatszustand ist {0}", stateOfMatter);
+
+            temperature += 30;
+            // in Kurzversion
+            stateOfMatter = temperature < 0 ? "fest" : "flüssig";
+            Console.WriteLine("Aggregatszustand ist {0}", stateOfMatter);
+            temperature += 100;
+            stateOfMatter = temperature > 100 ? "gas" : (temperature < 0 ? "fest" : "flüssig");
+            Console.WriteLine("Aggregatszustand ist {0}", stateOfMatter);
+            //-----------------------------------------------------Erweiterte If Statements ENDE
+            //Herausforderung, es selber anders machen:
+            stateOfMatter = temperature < 0 ? "fest" : (temperature < 100 ? "flüssig": "gas");
+            Console.WriteLine("Wasser: Aggregatszustand ist {0}", stateOfMatter);
+            //Herausforderung, es selber anders machenEnde
+
+
+
             Console.WriteLine("ENDE");
             Console.ReadKey();
         }
@@ -136,14 +184,14 @@ namespace EntscheidungenTreffenLassenIfElseSwitchCase
         public static void InputnewScore()
         {
             Console.WriteLine("Bitte trage deinen NEW PlayerName ein(LEER zum beenden):");
-            newplayerName = Console.ReadLine(); 
+            newplayerName = Console.ReadLine();
             Console.WriteLine("Bitte trage dein NEW Score ein!(mindestens 0)");
             newScore = int.Parse(Console.ReadLine());
         }
 
         public static void checkNewHighScore(string newplayerName, int newScore)
         {
-            if(newScore >= highScore)
+            if (newScore >= highScore)
             {
                 // save the new highscore value and name
                 highScore = newScore;
